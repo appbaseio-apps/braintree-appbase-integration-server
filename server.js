@@ -7,7 +7,14 @@
 var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
+var braintree = require("braintree");
 
+var gateway = braintree.connect({
+  environment: braintree.Environment.Sandbox,
+  merchantId: "45wbbvr7j4sv3qtj",
+  publicKey: "hn9b5tqq9hgmm5d3",
+  privateKey: "3ddd030fa021c7a402221e106348677b"
+});
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
