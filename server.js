@@ -26,9 +26,73 @@ var port = process.env.PORT || 8080;        // set our port
 // =============================================================================
 var router = express.Router();              // get an instance of the express Router
 
+
+
 // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/test', function(req, res) {
     res.json({ message: 'Hooray! This is my first API call!' });   
+});
+
+router.get('/free', function(req, res) {
+  	gateway.subscription.update("jdm9bm", {
+  	  planId: "53g2",
+	  merchantAccountId: "appbase"
+  	}, function (err, result) {
+  		console.log(result)
+  	});
+  	res.json({ message: 'Plan updated!' });   
+});
+
+router.get('/startup', function(req, res) {
+  	gateway.subscription.update("jdm9bm", {
+  	  planId: "832m",
+	  merchantAccountId: "appbase"
+  	}, function (err, result) {
+  		console.log(result)
+  	});
+  	res.json({ message: 'Plan updated!' });   
+});
+
+router.get('/growth', function(req, res) {
+  	gateway.subscription.update("jdm9bm", {
+  	  planId: "g27r",
+	  merchantAccountId: "appbase"
+  	}, function (err, result) {
+  		console.log(result)
+  	});
+  	res.json({ message: 'Plan updated!' });   
+});
+
+router.get('/hacker', function(req, res) {
+  	gateway.subscription.update("jdm9bm", {
+  	  planId: "nzdw",
+	  merchantAccountId: "appbase"
+  	}, function (err, result) {
+  		console.log(result)
+  	});
+  	res.json({ message: 'Plan updated!' });   
+});
+
+
+router.get('/premier', function(req, res) {
+  	gateway.subscription.update("jdm9bm", {
+  	  planId: "23vg",
+	  merchantAccountId: "appbase"
+  	}, function (err, result) {
+  		console.log(result)
+  	});
+  	res.json({ message: 'Plan updated!' });   
+});
+
+
+router.get('/enterprise', function(req, res) {
+  	gateway.subscription.update("jdm9bm", {
+  	  planId: "vtpb",
+	  merchantAccountId: "appbase"
+  	}, function (err, result) {
+  		console.log(result)
+  	});
+  	res.json({ message: 'Plan updated!' });   
 });
 
 // more routes for our API will happen here
