@@ -8,13 +8,16 @@ var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var braintree = require("braintree");
+var config = require('./config.json');
 
 var gateway = braintree.connect({
   environment: braintree.Environment.Sandbox,
-  merchantId: "45wbbvr7j4sv3qtj",
-  publicKey: "hn9b5tqq9hgmm5d3",
-  privateKey: "3ddd030fa021c7a402221e106348677b"
+  merchantId: config.braintreeMerchantId,
+  publicKey: config.braintreePublicKey,
+  privateKey: config.braintreePrivateKey
 });
+
+
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -34,8 +37,8 @@ router.get('/test', function(req, res) {
 });
 
 router.get('/free', function(req, res) {
-  	gateway.subscription.update("jdm9bm", {
-  	  planId: "53g2",
+  	gateway.subscription.update(config.subscriptionId, {
+  	  planId: config.freePlanId,
 	  merchantAccountId: "appbase"
   	}, function (err, result) {
   		console.log(result)
@@ -44,8 +47,8 @@ router.get('/free', function(req, res) {
 });
 
 router.get('/startup', function(req, res) {
-  	gateway.subscription.update("jdm9bm", {
-  	  planId: "832m",
+  	gateway.subscription.update(config.subscriptionId, {
+  	  planId: config.startupPlanId,
 	  merchantAccountId: "appbase"
   	}, function (err, result) {
   		console.log(result)
@@ -54,8 +57,8 @@ router.get('/startup', function(req, res) {
 });
 
 router.get('/growth', function(req, res) {
-  	gateway.subscription.update("jdm9bm", {
-  	  planId: "g27r",
+  	gateway.subscription.update(config.subscriptionId, {
+  	  planId: config.growthPlanId,
 	  merchantAccountId: "appbase"
   	}, function (err, result) {
   		console.log(result)
@@ -64,8 +67,8 @@ router.get('/growth', function(req, res) {
 });
 
 router.get('/hacker', function(req, res) {
-  	gateway.subscription.update("jdm9bm", {
-  	  planId: "nzdw",
+  	gateway.subscription.update(config.subscriptionId, {
+  	  planId: config.hackerPlanId,
 	  merchantAccountId: "appbase"
   	}, function (err, result) {
   		console.log(result)
@@ -75,8 +78,8 @@ router.get('/hacker', function(req, res) {
 
 
 router.get('/premier', function(req, res) {
-  	gateway.subscription.update("jdm9bm", {
-  	  planId: "23vg",
+  	gateway.subscription.update(config.subscriptionId, {
+  	  planId: config.premierPlanId,
 	  merchantAccountId: "appbase"
   	}, function (err, result) {
   		console.log(result)
@@ -86,14 +89,15 @@ router.get('/premier', function(req, res) {
 
 
 router.get('/enterprise', function(req, res) {
-  	gateway.subscription.update("jdm9bm", {
-  	  planId: "vtpb",
+  	gateway.subscription.update(config.subscriptionId, {
+  	  planId: config.enterprisePlanId,
 	  merchantAccountId: "appbase"
   	}, function (err, result) {
   		console.log(result)
   	});
   	res.json({ message: 'Plan updated!' });   
 });
+
 
 // more routes for our API will happen here
 
