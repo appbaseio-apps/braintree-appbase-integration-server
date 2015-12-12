@@ -1,5 +1,12 @@
  {
-	"braintreeMerchantId": "45wbbvr7j4sv3qtj",
-	"braintreePublicKey": "hn9b5tqq9hgmm5d3",
-	"braintreePrivateKey": "3ddd030fa021c7a402221e106348677b",
+	"braintreeMerchantId" : "45wbbvr7j4sv3qtj",
+	"braintreePublicKey" : "hn9b5tqq9hgmm5d3",
+	"braintreePrivateKey" : "3ddd030fa021c7a402221e106348677b",
+	"freePlanId": "53g2",
+	"startupPlanId": "832m",
+	"growthPlanId": "g27r",
+	"hackerPlanId": "nzdw",
+	"premierPlanId": "23vg",
+	"enterprisePlanId": "vtpb",
+	"subscriptionId": "jdm9bm"
  }
