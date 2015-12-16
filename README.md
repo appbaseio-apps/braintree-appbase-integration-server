@@ -1,5 +1,8 @@
 # braintree-appbase-integration-server
 
+Appbase and Braintree can be really powerful to update the pricing plan of the user on the certain condition. For this project, we are changing the pricing plan of the user based on the number of API calls made by the user. One can simulate the number of API calls from the frontend module.
+
+
 ## Getting Started
 
 1. Enter your Braintree crendentials in the config file:
@@ -34,9 +37,6 @@ node server.js
 ```
 
 ## Dive into Codebase
-
-Appbase and Braintree can be really powerful to update the pricing plan of the user on the certain condition. For this project, we are changing the pricing plan of the user based on the number of API calls made by the user. One can simulate the number of API calls from the frontend module.
-
 
 The integration is divided into two sub modules:
  - Frontend Module: Simulates the API call and update the value in Appbase
