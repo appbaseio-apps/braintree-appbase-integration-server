@@ -34,7 +34,10 @@ Appbase and Braintree can be really powerful to update the pricing plan of the u
 5. Run the server by following command:    
 ```
 node server.js
-```
+```    
+
+To run the frontend, go to the the [frontend repository](https://github.com/yashshah/braintree-appbase-integration)
+
 
 ## Dive into Codebase
 
