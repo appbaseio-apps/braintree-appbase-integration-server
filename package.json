@@ -4,6 +4,7 @@
     "dependencies": {
         "express": "~4.0.0",
         "body-parser": "~1.0.1",
-        "braintree": "~1.32.0"
+        "braintree": "~1.32.0",
+        "appbase-js": "~0.10.4"
     }
 }
