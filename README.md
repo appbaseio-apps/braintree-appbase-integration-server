@@ -29,9 +29,22 @@ Appbase and Braintree can be really powerful to update the pricing plan of the u
 "subscriptionId": "jdm9bm"
 ```    
 
-4. Based on your logic, run the commands in the webhooks.md file. For this we have kept the threshold for API count and then we make the call to the server. In this, you will be required to enter your appbase crendentials and address of where server is hosted.     
+4. Install the dependencies of the project:     
+```
+npm install
+```  
+5. Set the webhooks that will be triggered when the condition =that is specified in webhooks.js is met. Once the condition is met, appbase webhooks will make the request on our server. You only need to run it once.
 
-5. Run the server by following command:    
+```
+node webhooks.js
+``` 
+
+Before you change the value of any parameters in webhook file, please de-register the webhooks by running the following command and then make the changes:
+```
+node webhooks.js stop
+```
+
+6. Run the server by following command:    
 ```
 node server.js
 ```    
@@ -50,6 +63,6 @@ When you update number of API call, it gets updated in the Appbase. In Appbase, 
 For managing the subscription and plans:
  For this project, we have created 5 plans and you can create your own plans and specify in the config file. You can set the webhooks after that to call the server which will then update the plan in the braintree.
 
-To configure the webhooks, one is required to run the curl statement that are available in the webhook file.
+To register the webhooks, one is required to run the webhooks.js once.
 
  This project ends the polling to check if the number of API calls has reach the threashold to change the pricing plane which otherwise would have required.
